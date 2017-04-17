@@ -37,7 +37,7 @@ unsigned long requests[] = {
   calculate(0, 5, 0), // 获取壁挂炉故障信息
   calculate(1, 1, 35 << 8),// 设置采暖水温度 35C
   calculate(1, 56, 40 << 8),// 设置生活水温度 40C
-  calculate(1, 25, 0), // 获取壁挂炉温度
+  calculate(0, 25, 0), // 获取壁挂炉温度
 };
 
 void setIdleState() {
