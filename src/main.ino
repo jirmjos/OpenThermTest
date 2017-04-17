@@ -35,8 +35,8 @@ char message[150];
 unsigned long requests[] = {
   calculate(0, 0, 3 << 8), // 获取壁挂炉状态，同时设定壁挂炉运行模式 - 允许采暖, 允许生活水
   calculate(0, 5, 0), // 获取壁挂炉故障信息
-  calculate(1, 1, 80 << 8),// 设置采暖水温度 35C
-  calculate(1, 56, 50 << 8),// 设置生活水温度 40C
+  calculate(1, 1, 80 << 8),// 设置采暖水温度
+  calculate(1, 56, 50 << 8),// 设置生活水温度
   calculate(0, 25, 0), // 获取壁挂炉温度
 };
 
