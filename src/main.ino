@@ -138,7 +138,7 @@ void readResponse() {
           Serial.println("Low Water Pressure");
           break;
         case F_GAS:
-          Serial.println("Now Gas");
+          Serial.println("No Gas");
           break;
         case F_AIR_PRESSURE:
           Serial.println("Air Pressure Failure");
