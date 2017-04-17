@@ -1,25 +1,25 @@
 // 指令转换函数，输入类型，DATA-ID，以及DATA，转换为曼切斯特波32位数组
-uint32_t calculate(const uint8_t type, const uint8_t id,const uint16_t data){
-  uint8_t parity=0,i=0;
+uint32_t calculate(const uint8_t type, const uint8_t id, const uint16_t data){
+  uint8_t parity=0, i=0;
   uint32_t tmp=0;
-  tmp=((uint32_t)type<<28) + ((uint32_t)id<<16) + data;
-  for(i=0;i<31;i++) {
-    parity^=(tmp&bit(i)?1:0);
+  tmp = ((uint32_t)type << 28) + ((uint32_t)id << 16) + data;
+  for(i=0; i<31; i++) {
+    parity ^= (tmp & bit(i)?1:0);
   }
-  tmp|=parity?bit(31):0;
+  tmp |= parity ? bit(31):0;
   return tmp;
 }
 
-#define S_FAULT          1
-#define S_CH_ACTIVE      2
-#define S_DHW_ACTIVE     4
-#define S_FLAME          8
-#define S_COMF_ACTIVE  512
-#define F_SERVICE        1
-#define F_LOW_WATER      4
-#define F_GAS            8
-#define F_AIR_PRESSURE  16
-#define F_WATER_OV_TEMP 32
+#define S_FAULT          1  // 故障
+#define S_CH_ACTIVE      2  // 采暖模式
+#define S_DHW_ACTIVE     4  // 生活水模式
+#define S_FLAME          8  // 燃烧
+#define S_COMF_ACTIVE  512  // 舒适模式
+#define F_SERVICE        1  // 需服务
+#define F_LOW_WATER      4  // 系统水压不足
+#define F_GAS            8  // 没有燃气
+#define F_AIR_PRESSURE  16  // 风压故障
+#define F_WATER_OV_TEMP 32  // 超温故障
 
 int OT_IN_PIN = 8;
 int OT_OUT_PIN = 9;
