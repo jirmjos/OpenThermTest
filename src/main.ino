@@ -21,8 +21,8 @@ uint32_t calculate(const uint8_t type, const uint8_t id,const uint16_t data){
 #define F_AIR_PRESSURE  16
 #define F_WATER_OV_TEMP 32
 
-int OT_IN_PIN = D5;
-int OT_OUT_PIN = D6;
+int OT_IN_PIN = 8;
+int OT_OUT_PIN = 9;
 
 byte req_idx = 0;
 int state = 0;
@@ -35,8 +35,8 @@ char message[150];
 unsigned long requests[] = {
   calculate(0, 0, 3 << 8), // 获取壁挂炉状态，同时设定壁挂炉运行模式 - 允许采暖, 允许生活水
   calculate(0, 5, 0), // 获取壁挂炉故障信息
-  calculate(1, 1, 80 << 8),// 设置采暖水温度
-  calculate(1, 56, 50 << 8),// 设置生活水温度
+  calculate(1, 1, 45 << 8),// 设置采暖水温度
+  calculate(1, 56, 45 << 8),// 设置生活水温度
   calculate(0, 25, 0), // 获取壁挂炉温度
 };
 
