@@ -2,7 +2,7 @@
 #include <PubSubClient.h> // MQTT协议支持
 
 #define WIFI_SSID "AIRFIT_WIRELESS"
-#define WIFI_PASSWORD "WX68131929"
+#define WIFI_PASSWORD "XXXXXXXXXXXX"
 #define MQTT_SERVER "192.168.1.148"
 #define MQTT_PORT 1883
 #define MQTT_TOKEN "mosquitto"
