@@ -272,12 +272,12 @@ void loop() {
         errRaised = false;
       }else if(changedCHTemp) {
         sendRequest(calculate(1, 1, targetCHTemp << 8 ));
-        Serial.print("CH Temp:");
+        Serial.print("Set CH Temp:");
         Serial.println(targetCHTemp);
         changedCHTemp = false;
       } else if(changedDHWTemp) {
         sendRequest(calculate(1, 56, targetDHWTemp << 8));
-        Serial.print("DHW Temp:");
+        Serial.print("Set DHW Temp:");
         Serial.println(targetDHWTemp);
         changedDHWTemp = false;
       } else if(checkBoilerTemp){
